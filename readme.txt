@@ -16,6 +16,8 @@ Boggle Woggle helps you manage your ads (advertisements) on your blog. You can c
 
 For each ad unit and ad widget you can specify where it should be displayed and on what type of content (posts, pages, archives, categories, home, search) and how it should be alligned.
 
+Of course instead of ads you can use any text or html in the units so you can use it for all kinds of purposes.
+
 
 == Installation ==
 
