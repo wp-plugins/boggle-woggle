@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boggle Woggle
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.10
+Version: 1.11
 Author: BoggleWoggle
 Description: Boggle Woggle lets you easily manage ads (advertisement on you blog)
 License: GPLv2 a
@@ -765,6 +765,11 @@ function boggle_woggle_page() {
 <li>5 - Save your settings, and your done</li>
 </ul>
 <BR>
+<strong>The middle ad (middle of content) IMPORTANT</strong>
+<p>
+Adding an ad in the middle requires you to make use of paragraphs. I am currently working on a better solution for this so be patient:)
+</p>
+<BR>
 <strong>Adding ads in the sidebar or other widgetcontainers</strong>
 <p>
 The three last units on this page are 'Ad widgets', you can paste your ad code in there and set on which type of content it should appear. Afterwards don't forget to go to your widgets menu and drag the widgets to one of the widgetcontainers (for example the sidebar).
@@ -1504,6 +1509,28 @@ The location in combination with the alignment determine where the ad will be pl
 /wp-content/plugins/boggle-woggle/Plugin-Arrows.png" target="_blank"><img src="<?php bloginfo( 'wpurl' ); ?>
 /wp-content/plugins/boggle-woggle/Plugin-Arrows.png" width="300px"></a><BR>
 								<center>CLICK TO ENLARGE</center>
+								</td>
+							</tr>
+
+					</tbody>
+				</table>
+<BR><BR>
+				<table class="widefat" cellspacing="0" style="width:350px; margin-left:15px;">
+
+					<tbody>
+						<thead>
+							<tr>
+								<th colspan="2" scope="col">
+									News & Info
+								</th>
+							</tr>
+						</thead>
+
+							<tr>
+								<td width="350px">
+									For more information and requesting features or any other questions, please visit the official website:<BR>
+									<a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">Boggle Woggle</a>
+
 								</td>
 							</tr>
 
