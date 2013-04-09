@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boggle Woggle
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.11
+Version: 1.12
 Author: BoggleWoggle
 Description: Boggle Woggle lets you easily manage ads (advertisements on you blog)
 License: GPLv2 a
@@ -1529,7 +1529,8 @@ The location in combination with the alignment determine where the ad will be pl
 							<tr>
 								<td width="350px">
 									For more information and requesting features or any other questions, please visit the official website:<BR>
-									<a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">Boggle Woggle</a>
+									<a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">Boggle Woggle</a><BR<BR>
+									I would really like it if you gave me some feedback there. I have had no feedback yet and am not sure if you like the plugin or if I should change some things.
 
 								</td>
 							</tr>
