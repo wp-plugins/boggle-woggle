@@ -18,7 +18,7 @@ For each ad unit and ad widget you can specify where it should be displayed and 
 
 Of course instead of ads you can use any text or html in the units so you can use it for all kinds of purposes.
 
-If you have any ideas for other features or things that could be changed please leave me a message on the boggle woggle page: <a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">boggle woggle</>
+If you have any ideas for other features or things that could be changed please leave me a message on the boggle woggle page: <a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">boggle woggle</a>
 
 
 == Installation ==
