@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boggle Woggle
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.12
+Version: 1.13
 Author: BoggleWoggle
 Description: Boggle Woggle lets you easily manage ads (advertisements on you blog)
 License: GPLv2 a
@@ -25,7 +25,7 @@ if (!class_exists("BoggleWoggle")) {
 				//Check if this addunit should be displayed at this location (before content)
 				if (get_option('bw_addunit'.$addcounter.'_location')=='8') {
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -82,7 +82,7 @@ if (!class_exists("BoggleWoggle")) {
 				//Check if this addunit should be displayed at this location (before content)
 				if (get_option('bw_addunit'.$addcounter.'_location')=='4') {
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -138,7 +138,7 @@ if (!class_exists("BoggleWoggle")) {
 				//Check if this addunit should be displayed at this location (before content)
 				if (get_option('bw_addunit'.$addcounter.'_location')=='1') {
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -200,7 +200,7 @@ if (!class_exists("BoggleWoggle")) {
 				//Check if this addunit should be displayed at this location (before content)
 				if (get_option('bw_addunit'.$addcounter.'_location')=='5') {
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -247,7 +247,7 @@ if (!class_exists("BoggleWoggle")) {
 				if (get_option('bw_addunit'.$addcounter.'_location')=='6') {
 					//Middle of content
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -303,7 +303,7 @@ if (!class_exists("BoggleWoggle")) {
 				if (get_option('bw_addunit'.$addcounter.'_location')=='7') {
 					//After of content
 					$showad = false;
-					$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+					$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 					$postid = ',' . $post->ID . ',';
 					$excludepost = 'false';
 					if (strpos($excludelist,$postid) !== false) {
@@ -386,7 +386,7 @@ class BoggleWoggleAdWidget1 extends WP_Widget
     extract($args, EXTR_SKIP);
 
 	$showad = false;
-	$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+	$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 	$postid = ',' . $post->ID . ',';
 	$excludepost = 'false';
 	if (strpos($excludelist,$postid) !== false) {
@@ -456,7 +456,7 @@ class BoggleWoggleAdWidget2 extends WP_Widget
     extract($args, EXTR_SKIP);
 
 	$showad = false;
-	$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+	$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 	$postid = ',' . $post->ID . ',';
 	$excludepost = 'false';
 	if (strpos($excludelist,$postid) !== false) {
@@ -526,7 +526,7 @@ class BoggleWoggleAdWidget3 extends WP_Widget
     extract($args, EXTR_SKIP);
 
 	$showad = false;
-	$excludelist = ',' . trim(get_option('bw_global_excludelist')) . ',';
+	$excludelist = ',' . str_replace(' ', '',get_option('bw_global_excludelist')) . ',';
 	$postid = ',' . $post->ID . ',';
 	$excludepost = 'false';
 	if (strpos($excludelist,$postid) !== false) {
@@ -807,7 +807,7 @@ The location in combination with the alignment determine where the ad will be pl
 
 									<strong style="font-size:11px; font-weight:bold;">ID's of posts and pages where NO ads should appear: (seperate with a comma ',')</strong><BR>
 
-									<input name="bw_global_excludelist" id="bw_global_excludelist" type="text" style="width:300px" value="<?php echo get_option('bw_global_excludelist'); ?>" />
+									<input name="bw_global_excludelist" id="bw_global_excludelist" type="text" style="width:300px" value="<?php echo str_replace(' ', '',get_option('bw_global_excludelist')); ?>" />
 							</td>
 						</tr>
 

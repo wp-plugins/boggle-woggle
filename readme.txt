@@ -4,7 +4,7 @@ Donate link:
 Tags: manage ads, adsense, google adsense, ad manager, add top text, advertising
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 1.12
+Stable tag: 1.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,7 @@ None yet
 4. 
 
 == Changelog ==
+1.13 <BR>Fixed problem when using spaces in the post and pages to exclude list (global settings)<BR>
 1.12 <BR>Requested for feedback of users<BR>
 1.11 <BR>Information on the middle ad<BR>
 1.10 <BR>Added extra functionality<BR>
