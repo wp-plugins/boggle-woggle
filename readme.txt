@@ -20,6 +20,8 @@ Of course instead of ads you can use any text or html in the units so you can us
 
 If you have any ideas for other features or things that could be changed please leave me a message on the boggle woggle page: <a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">boggle woggle</a>
 
+Features: Adsense, Google Adsense, Ad inserter, other ads, Advertising, Monetizing your blog, Easy Adsense, Advanced Adsense settings, Simple Adsense, Admin settings, Free plugin, ad units, adsense widgets
+
 
 == Installation ==
 
