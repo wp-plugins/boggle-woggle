@@ -1,4 +1,4 @@
-=== Boggle Woggle ===
+=== Boggle Woggle ADSENSE===
 Contributors: 
 Donate link: 
 Tags: manage ads, adsense, google adsense, ad manager, add top text, advertising
@@ -12,15 +12,15 @@ Boggle Woggle helps you manage your ads (advertisements) on your blog
 
 == Description ==
 
-Boggle Woggle helps you manage your ads (advertisements) on your blog. You can copy/paste your ad code (for example from google adsense) into ad units or ad widgets.
+Boggle Woggle helps you manage your ads (advertisements) on your blog. You can copy/paste your ad code (for example from google ADSENSE) into ad units or ad widgets.
 
-For each ad unit and ad widget you can specify where it should be displayed and on what type of content (posts, pages, archives, categories, home, search) and how it should be alligned.
+For each ad unit and ad widget you can specify where it should be displayed and on what type of content (posts, pages, archives, categories, home, search) and how it should be alligned, perfect to have control over your ADSENSE ads.
 
 Of course instead of ads you can use any text or html in the units so you can use it for all kinds of purposes.
 
 If you have any ideas for other features or things that could be changed please leave me a message on the boggle woggle page: <a href="http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/">boggle woggle</a>
 
-Features: Adsense, Google Adsense, Ad inserter, other ads, Advertising, Monetizing your blog, Easy Adsense, Advanced Adsense settings, Simple Adsense, Admin settings, Free plugin, ad units, adsense widgets
+Features: Adsense, Google ADSENSE, Ad inserter, other ads, Advertising, Monetizing your blog, Easy Adsense, Advanced Adsense settings, Simple Adsense, Admin settings, Free plugin, ad units, ADSENSE widgets, money, revenue
 
 
 == Installation ==
