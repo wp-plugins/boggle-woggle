@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Boggle Woggle
+Plugin Name: Boggle Woggle ADSENSE
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.16
-Author: BoggleWoggle
+Version: 1.17
+Author: EnergieBoer
 Description: Boggle Woggle lets you easily manage ads (advertisements on you blog)
 License: GPLv2 a
 
