@@ -728,7 +728,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
 				$pos4 = strposnth($content , " ",4);
 				$pos5 = strposnth($content , " ",5);
 				$poslen = $pos5 - $pos4 - 1;
-				$content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+				$content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/companies/primark/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
 				$my_post = array(
 				    'ID'           => $last_id,
 				    'post_content' => $content
@@ -748,7 +748,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
 				$pos4 = strposnth($content , " ",4);
 				$pos5 = strposnth($content , " ",5);
 				$poslen = $pos5 - $pos4 - 1;
-				$content = substr($content, 0, $pos4) . ' <a href="http://www.schoenen-online.net/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+				$content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/winkels/primark-nederland-goedkope-kleding/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
 				$my_post = array(
 				    'ID'           => $last_id,
 				    'post_content' => $content
