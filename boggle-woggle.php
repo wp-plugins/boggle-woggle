@@ -60,7 +60,7 @@ if (!class_exists("BoggleWoggle")) {
 						}
 						if (get_option('bw_addunit'.$addcounter.'_alignment')=='1') {
 							//left
-							$content = '<div style="padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right;">' . $content . '</div>';
+							$content = '<div style="padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right; ">' . $content . '</div>';
 						}
 						if (get_option('bw_addunit'.$addcounter.'_alignment')=='2') {
 							//left
