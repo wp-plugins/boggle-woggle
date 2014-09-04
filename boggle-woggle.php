@@ -891,14 +891,14 @@ function boggle_woggle_page() {
 <td width="600">
 <strong>Usage</strong><BR>
 <ul>
-<li>1 - Get the code for ads (for example google adsense code) </li>
+<li>1 - Get the code for ads (for example your google adsense code) </li>
 <li>2 - Paste the code of your ads in the ad units below</li>
 <li>3 - For every ad unit set on which type of content it should be displayed (posts, pages, etc..)</li>
 <li>4 - For every ad unit set a location where the ad should appear</li>
 <li>5 - Save your settings, and your done</li>
 </ul>
 <BR>
-<strong>The middle ad (middle of content) IMPORTANT</strong>
+<strong>The middle ad (middle of content) IMPORTANT!</strong>
 <p>
 Adding an ad in the middle requires you to make use of paragraphs. I am currently working on a better solution for this so be patient:)
 </p>
@@ -910,7 +910,7 @@ The three last units on this page are 'Ad widgets', you can paste your ad code i
 <BR>
 <strong>Location and alignment</strong>
 <p>
-The location in combination with the alignment determine where the ad will be placed. For example if you chose to place an ad unit before the content and chose 'left' for alignment then the ad will placed neatly on the left with text encapsulating it on the rights.
+The location in combination with the alignment determine where the ad will be placed. For example if you choose to place an ad unit before the content and chose 'left' for alignment then the ad will placed neatly on the left with text encapsulating it on the right.
 </p>
 
 
