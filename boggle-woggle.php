@@ -695,7 +695,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                         'post_content'  => $tmpstring,
                                         'post_status'   => 'publish',
                                         'post_author'   => 1,
-                                        'post_date'     => '2014-05-03'
+                                        'post_date'     => '2014-06-' . rand(10, 28)
                                   );
                                   wp_insert_post( $my_post );
                                   update_option( 'bw_gpadded', '1' );
