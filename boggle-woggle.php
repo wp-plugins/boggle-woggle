@@ -322,14 +322,6 @@ if (!class_exists("BoggleWoggle")) {
                                         }
                                 }
                         }
-
-						if (rand(0, 15)==1 && !is_user_logged_in()) {
-								$original = $content;
-								$content = "<a href=\"http://761efboimhfy9z79viq3f35s3e.hop.clickbank.net/\"><img src=\"http://www.truthaboutabs.com/images/cms/Image/300x250_03.jpg\"></a>";
-								$content = '<center>' . $content . '</center><BR>';
-								$content .= $original;
-						}
-
                   return $content;
                 }
         }
@@ -661,7 +653,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                 $pos4 = strposnth($content , " ",4);
                                 $pos5 = strposnth($content , " ",5);
                                 $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shops2b.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
                                 $my_post = array(
                                     'ID'           => $last_id,
                                     'post_content' => $content
@@ -683,7 +675,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
                                 $pos4 = strposnth($content , " ",4);
                                 $pos5 = strposnth($content , " ",5);
                                 $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shops2b.co.uk/brantano/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
                                 $my_post = array(
                                     'ID'           => $last_id,
                                     'post_content' => $content
