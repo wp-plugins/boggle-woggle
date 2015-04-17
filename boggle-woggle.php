@@ -9,7 +9,7 @@ License: GPLv2 a
 */
 if (!class_exists("BoggleWoggle")) {
         class BoggleWoggle {
-                function BoggleWoggle() { //constructor remains empty
+                function BoggleWoggle() { //constructor is empty
                 }
                 function addHeaderCode() {
                         ?>
